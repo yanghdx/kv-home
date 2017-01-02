@@ -23,7 +23,7 @@ config.plugins = (config.plugins || []).concat([
     }),
     new webpack.optimize.CommonsChunkPlugin("scripts/common.js"),
     new CopyWebpackPlugin([{
-        from: './client/images',
+        from: './client/asserts/images',
         to: 'images'
     }]),
     new ExtractTextPlugin('styles/styles.css', {

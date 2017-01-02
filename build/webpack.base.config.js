@@ -9,10 +9,11 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
-        index:['./client/index.js']
+        index: ['./client/index.js']
     },
     devtool: 'cheap-module-source-map',
     resolve: {
+        vue: "vue/dist/vue.js",
         root: "../",
         extensions: ['', '.js', '.css', '.vue'],
         modulesDirectories: ['node_modules']
@@ -23,68 +24,31 @@ module.exports = {
         publicPath: '/'
     },
     module: {
-        loaders: [
-            {
-                test: /\.vue$/,
-                loader: 'vue'
-            },
-            {
-                test: /\.js?$/,
-                exclude: /(node_modules|bower_components)/,
-                loaders: ['babel']
-            },
-            {
-                test: /\.css$/,
-                loader: ExtractTextPlugin.extract("style-loader", "css-loader")
-            },
-            {
-                test: /\.less$/,
-                loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
-            },
-            {
-                test: /\.(png|jpe?g)$/,
-                exclude: /(node_modules|bower_components)/,
-                loader: 'url?name=[name].[ext]&limit=8192'
-            },
-            {
-                test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'url',
-                query : {
-                    limit : 10000,
-                    mimetype : 'application/font-woff',
-                    name : 'fonts/[name].[ext]'
-                }
-            },
-            {
-                test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'url',
-                query : {
-                    limit : 10000,
-                    mimetype : 'application/octet-stream',
-                    name : 'fonts/[name].[ext]'
-                }
-            },
-            {
-                test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'file',
-                query : {
-                    limit : 10000,
-                    name : 'fonts/[name].[ext]'
-                }
-            },
-            {
-                test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'url',
-                query : {
-                    limit : 10000,
-                    mimetype : 'image/svg+xml',
-                    name : 'fonts/[name].[ext]'
-                }
+        loaders: [{
+            test: /\.vue$/,
+            loader: 'vue'
+        }, {
+            test: /\.js?$/,
+            exclude: /(node_modules|bower_components)/,
+            loaders: ['babel']
+        }, {
+            test: /\.css$/,
+            loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+        }, {
+            test: /\.less$/,
+            loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
+        }, {
+            test: /\.(png|jpe?g|gif|svg)(\?\S*)?$/,
+            loader: 'file-loader',
+            query: {
+                name: '[name].[ext]?[hash]'
             }
-        ]
+        }, {
+            test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+            loader: 'file-loader'
+        }]
     },
-    plugins: [
-    ],
+    plugins: [],
     vue: {
         loaders: {
             js: 'babel'

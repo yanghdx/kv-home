@@ -1,8 +1,8 @@
 <template>
     <div class="main-wrap">
-        <header></header>
+        <app-header></app-header>
         <router-view></router-view>
-        <footer></footer>
+        <app-footer></app-footer>
     </div>
 </template>
 <script>
@@ -14,8 +14,8 @@
             }
         },
         components: {
-            header: require('./components/header.vue'),
-            header: require('./components/footer.vue')
+            appHeader: require('./components/header.vue'),
+            appFooter: require('./components/footer.vue')
         }
     }
 </script>

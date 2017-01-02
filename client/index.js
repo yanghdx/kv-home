@@ -1,9 +1,13 @@
-import Vue from 'vue'
+import Vue from 'vue/dist/vue.js'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import Vuex from 'vuex'
 import App from './app'
 import routes from './routes';
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
+
+Vue.use(ElementUI)
 
 Vue.use(VueRouter)
 
@@ -18,10 +22,7 @@ let router = new VueRouter({
 let vm = new Vue({
     el: '#app',
     router,
-    template: '<App/>',
-    components: {
-        App
-    }
+    render: h => h(App)
 })
 
 window.App = vm
