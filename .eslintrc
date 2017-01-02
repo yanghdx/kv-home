@@ -1,0 +1,33 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "root": true,
+    "extends": "standard",
+    "parser": "babel-eslint",
+    "plugins": [
+        "html",
+        "vue"
+    ],
+    "rules": {
+        "no-useless-escape": 0,
+        "semi": "off",
+        "arrow-parens": 0,
+        "array-callback-return":0,
+        "curly": 1,
+        "no-void": 0,
+        "no-eval": 2,
+        "indent": ["error", 4, { "SwitchCase": 1 }],
+        "eol-last": 0,
+        "space-before-function-paren": 0,
+        "spaced-comment": 0,
+        "arrow-spacing": 0,
+        "no-multiple-empty-lines": 0,
+        "brace-style": "warn",
+        "quotes": "warn",
+        "padded-blocks": 0,
+        "camelcase": "warn"
+    }
+}
