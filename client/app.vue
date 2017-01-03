@@ -1,5 +1,5 @@
 <template>
-    <div class="main-wrap">
+    <div class="main">
         <app-header></app-header>
         <router-view></router-view>
         <app-footer></app-footer>
@@ -19,3 +19,9 @@
         }
     }
 </script>
+<style scoped>
+    .main {
+        width: 100%;
+        min-height: 100px;
+    }
+</style>

@@ -16,17 +16,23 @@
     export default {
         data() {
             return {
-
+                menus: {
+                    '1': 'index',
+                    '2-1': 'movies',
+                    '2-2': 'tv-play',
+                    '2-3': 'others',
+                    '3': 'favorites'
+                }
             }
         },
         methods: {
             goMenu(name) {
-                this.$router.go({
-                    name
-                })
+                console.log('route name is %s', name)
+                this.$router.push({name})
             },
             handleSelect(key, keyPath) {
                 console.log(key, keyPath)
+                this.goMenu(this.menus[key])
             }
         }
     }

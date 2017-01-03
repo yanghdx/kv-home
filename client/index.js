@@ -16,13 +16,15 @@ Vue.use(Vuex)
 Vue.use(VueResource)
 
 let router = new VueRouter({
+    // mode: 'history',
     routes
 })
 
-let vm = new Vue({
+window.App = new Vue({
     el: '#app',
     router,
-    render: h => h(App)
+    template: '<App/>',
+    components: {
+        App
+    }
 })
-
-window.App = vm
