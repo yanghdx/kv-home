@@ -46,4 +46,13 @@ public/dist/*.map
 # temp files
 .tmp
 
+# video files
+*.mp4
+*.mkv
+*.avi
+*.rm
+*.rmvb
+*.mov
+*.mp3
+
 
