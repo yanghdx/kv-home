@@ -75,7 +75,8 @@
   "scripts": {
     "client-dev": "webpack-dev-server --inline --config build/webpack.dev.config.js",
     "client-dist": "webpack --progress --hide-modules --config build/webpack.prod.config.js",
-    "server-run": "node app.js",
+    "server-dev": "node app.js &",
+    "all-dev": "npm run server-dev && npm run client-dev",
     "start": "npm run client-dist && npm run server-run"
   }
 }
